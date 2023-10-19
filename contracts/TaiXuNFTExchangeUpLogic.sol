@@ -5,7 +5,7 @@ import "@openzeppelin/contracts-upgradeable/token/ERC1155/ERC1155Upgradeable.sol
 import "@openzeppelin/contracts-upgradeable/token/ERC1155/extensions/ERC1155BurnableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 
-contract TaiXuNFTExchange is Initializable,ERC1155Upgradeable,ERC1155BurnableUpgradeable {
+contract TaiXuNFTExchangeUpLogic is Initializable,ERC1155Upgradeable,ERC1155BurnableUpgradeable {
     struct InitialOwner {
         address owner;
         uint256 amount;
@@ -33,7 +33,8 @@ contract TaiXuNFTExchange is Initializable,ERC1155Upgradeable,ERC1155BurnableUpg
     mapping(uint256 => string) private _uris;
     string public name;
     string public symbol;
-    function initialize(string memory _name, string memory _symbol) public payable initializer {
+    uint256 public a;
+    function initialize(string memory _name, string memory _symbol) public initializer {
         name = _name;
         symbol = _symbol;
     }
